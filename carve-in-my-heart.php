@@ -107,9 +107,11 @@ add_action( 'admin_init', function() {
             $e = new WP_Error();
 
             if ( isset($_POST['my-data']) && $_POST['my-data'] ) {
+                // 何らかのチェックを行う
                 if (  trim( $_POST['my-data'] ) != '' ) {
                     update_option( 'my-data', trim( $_POST['my-data'] ) );
                 } else {
+                    // 現時点ではここには到達しない
                     $e->add(
                         'error',
                         __( 'Please enter a valid sentences.',
