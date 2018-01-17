@@ -42,7 +42,7 @@ function carve_in_my_heart_get_sentence() {
 
 add_action( 'admin_notices', function() {
     $chosen = carve_in_my_heart_get_sentence();
-    echo "<p id='carve-in-my-heart'>$chosen</p>";
+    echo "<p id='carve-in-my-heart'>" . esc_html( $chosen ) . "</p>";
 } );
 
 add_action( 'admin_head', function() {
